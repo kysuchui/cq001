@@ -1,0 +1,36 @@
+
+export interface ExtractedDocument {
+  docType: string;
+  symbol: string;
+  date: string;
+  summary: string;
+  authority: string;
+  startPage: number;
+  pageRange?: string;
+}
+
+export enum ProcessingStatus {
+  IDLE = 'IDLE',
+  PROCESSING = 'PROCESSING',
+  SUCCESS = 'SUCCESS',
+  ERROR = 'ERROR'
+}
+
+export interface ProcessingResult {
+  fileName: string;
+  data: ExtractedDocument[];
+}
+
+export interface ExcelExportConfig {
+  fontName: string;
+  fontSize: number;
+  wrapText: boolean;
+  allBorders: boolean;
+}
+
+export interface ThemeConfig {
+  id: string;
+  name: string;
+  primary: string; // Tailwind color name (e.g., 'blue', 'emerald')
+  gray: string;    // Tailwind gray scale (e.g., 'slate', 'zinc')
+}
